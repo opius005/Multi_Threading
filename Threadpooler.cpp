@@ -1,8 +1,4 @@
-/*
-must watch both:
--> threadpool   -   https://www.youtube.com/watch?v=u7ouCuieBhI&list=PLk6CEY9XxSIAeK-EAh3hB4fgNvYkYmghp&index=25&pp=iAQB
--> objectpool   -   https://www.youtube.com/watch?v=GmJhlkzO3r8&list=PLk6CEY9XxSIAeK-EAh3hB4fgNvYkYmghp&index=26&pp=iAQB
-*/
+
 
 #include <iostream>
 #include <mutex>
@@ -107,10 +103,10 @@ int main()
             printf("Task %d executed by thread %s \n",i,(std::stringstream ()<<std::this_thread::get_id()).str().c_str());
             std::this_thread::sleep_for(std::chrono::seconds(1));
             return a+1; }, i));
-            std::cout<<res.back().get()<<std::endl;
+            // std::cout<<res.back().get()<<std::endl;
     }
-    // for (int i = 0; i < k; i++)
-    // {
-    //     printf("%d \n", res[i].get());
-    // }
+     for (int i = 0; i < k; i++)
+     {
+         printf("%d \n", res[i].get());
+     }
 }
